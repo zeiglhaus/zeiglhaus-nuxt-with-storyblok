@@ -19,7 +19,8 @@ export default defineNuxtConfig({
   security: {
     headers: {
       contentSecurityPolicy: {
-        'frame-ancestors': 'app.storyblok.com'
+        'frame-ancestors': 'app.storyblok.com',
+        'img-src': '*'
       },
     },
   },
