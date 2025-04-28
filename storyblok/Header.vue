@@ -1,3 +1,16 @@
+<script setup>
+const storyblokApi = useStoryblokApi();
+
+const headerMenu = ref(null);
+
+const { data } = await storyblokApi.get('cdn/stories/config', {
+  version: 'draft',
+  resolve_links: 'url'
+})
+
+headerMenu.value = data.story.content.header_menu;
+</script>
+
 <template>
   <header class="w-full h-24 bg-[#f7f6fd]">
     <div class="container h-full mx-auto flex items-center justify-between">
@@ -6,11 +19,10 @@
       </NuxtLink>
       <nav>
         <ul class="flex space-x-8 text-lg font-bold">
-          <li>
-            <NuxtLink to="/blog" class="hover:text-[#50b0ae]">Blog</NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/about" class="hover:text-[#50b0ae]">About</NuxtLink>
+          <li v-for="blok in headerMenu" :key="blok._uid">
+            <NuxtLink :to="`/${blok.link.url}`" class="hover:text-[#50b0ae]">
+              {{ blok.link.story.name }}
+            </NuxtLink>
           </li>
         </ul>
       </nav>
