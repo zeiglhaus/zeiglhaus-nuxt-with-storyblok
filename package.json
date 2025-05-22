@@ -14,6 +14,7 @@
     "@nuxt/icon": "1.12.0",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@storyblok/nuxt": "^6.2.4",
+    "@tailwindcss/typography": "^0.5.16",
     "eslint": "^9.25.1",
     "nuxt": "^3.16.2",
     "nuxt-security": "^2.2.0",
