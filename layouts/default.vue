@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="bg-beer-foam">
     <Header />
     <slot />
   </main>

@@ -13,7 +13,7 @@ const heroClasses = computed(() => {
       :class="heroClasses"
   >
     <div
-        class="relative z-10 w-full text-center bg-gradient-to-t from-black/70 via-black/50 to-transparent py-6"
+        class="relative px-8 z-10 w-full bg-gradient-to-t from-black/70 via-black/50 to-transparent py-6"
     >
       <h1 class="text-6xl text-white font-bold mb-3">
         {{ blok.headline }}

@@ -12,15 +12,15 @@ headerMenu.value = data.story.content.header_menu;
 </script>
 
 <template>
-  <header class="w-full h-24 bg-[#f7f6fd]">
+  <header class="w-full h-24 ">
     <div class="container h-full mx-auto flex items-center justify-between">
       <NuxtLink to="/">
-        <h1 class="text-[#50b0ae] text-3xl font-bold font-fraunces">Storyblok Nuxt</h1>
+        <h1 class="text-zh-green text-3xl font-bold font-fraunces">Zeiglhaus Parkstein e.V.</h1>
       </NuxtLink>
       <nav>
         <ul class="flex space-x-8 text-lg font-bold">
           <li v-for="blok in headerMenu" :key="blok._uid">
-            <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-[#50b0ae]">
+            <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-zh-green">
               {{ blok.link.story.name }}
             </NuxtLink>
           </li>
@@ -32,6 +32,6 @@ headerMenu.value = data.story.content.header_menu;
 
 <style scoped>
 nav a.router-link-active {
-  @apply underline underline-offset-4 decoration-4 decoration-[#50b0ae];
+  @apply underline underline-offset-4 decoration-4 decoration-zh-green;
 }
 </style>

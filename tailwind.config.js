@@ -20,6 +20,9 @@ module.exports = {
                 // Traditional Bavarian
                 'bavarian-blue': '#0065BD',
                 'beer-foam': '#F8F4E3',
+
+                // CI colors
+                'zh-green': '#24905c'
             },
                 fontFamily: {
                 'fraunces': ['Fraunces', ...defaultTheme.fontFamily.serif],
