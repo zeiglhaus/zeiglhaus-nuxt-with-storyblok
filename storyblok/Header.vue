@@ -9,6 +9,8 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 })
 
 headerMenu.value = data.story.content.header_menu;
+
+watch(data, (d) => console.log(d))
 </script>
 
 <template>
@@ -20,7 +22,7 @@ headerMenu.value = data.story.content.header_menu;
       <nav>
         <ul class="flex space-x-8 text-lg font-bold">
           <li v-for="blok in headerMenu" :key="blok._uid">
-            <NuxtLink :to="`/${blok.link.url}`" class="hover:text-[#50b0ae]">
+            <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-[#50b0ae]">
               {{ blok.link.story.name }}
             </NuxtLink>
           </li>
