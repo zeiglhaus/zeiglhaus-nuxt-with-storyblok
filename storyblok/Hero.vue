@@ -18,7 +18,7 @@ const heroClasses = computed(() => {
       <h1 class="text-6xl text-white font-bold mb-3">
         {{ blok.headline }}
       </h1>
-      <h2 class="text-4xl text-white font-light">
+      <h2 class="text-4xl text-white font-light font-handwritten">
         {{ blok.subheadline }}
       </h2>
     </div>
