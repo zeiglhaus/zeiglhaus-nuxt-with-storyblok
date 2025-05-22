@@ -9,8 +9,6 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 })
 
 headerMenu.value = data.story.content.header_menu;
-
-watch(data, (d) => console.log(d))
 </script>
 
 <template>
