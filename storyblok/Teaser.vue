@@ -1,9 +1,17 @@
 <template>
   <div
       v-editable="blok"
-      class="py-32 text-6xl text-[#50b0ae] font-bold text-center"
+      class="container mx-auto py-12"
   >
-    {{ blok.headline }}
+    <div
+        v-if="blok.headline"
+        class="py-14 text-6xl text-deep-basalt text-center"
+    >
+      {{ blok.headline }}
+    </div>
+    <div v-if="blok.body" class="text-2xl md:px-36 text-center text-handwritten">
+      {{ blok.body }}
+    </div>
   </div>
 </template>
 

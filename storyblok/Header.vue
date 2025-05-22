@@ -12,15 +12,21 @@ headerMenu.value = data.story.content.header_menu;
 </script>
 
 <template>
-  <header class="w-full h-24 ">
-    <div class="container h-full mx-auto flex items-center justify-between">
+  <header class="w-full fixed z-20">
+    <div
+      class="container h-full mx-auto flex
+      items-center justify-between
+      rounded-full bg-white/80 backdrop-blur-sm
+      px-6 py-4 mt-4
+      shadow-md"
+    >
       <NuxtLink to="/">
-        <h1 class="text-zh-green text-3xl font-bold font-fraunces">Zeiglhaus Parkstein e.V.</h1>
+        <h1 class="text-zh-green text-4xl font-bold font-fraunces">Zeiglhaus Parkstein e.V.</h1>
       </NuxtLink>
-      <nav>
-        <ul class="flex space-x-8 text-lg font-bold">
+      <nav class="text-weathered-basalt">
+        <ul class="flex space-x-8 text-lg">
           <li v-for="blok in headerMenu" :key="blok._uid">
-            <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-zh-green">
+            <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-molten-amber">
               {{ blok.link.story.name }}
             </NuxtLink>
           </li>

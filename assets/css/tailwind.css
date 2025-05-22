@@ -5,6 +5,8 @@
 @layer base {
     body {
         @apply font-sans;
+        @apply bg-beer-foam;
+        background-image: url('../images/texture.png')
     }
 
     h1 {

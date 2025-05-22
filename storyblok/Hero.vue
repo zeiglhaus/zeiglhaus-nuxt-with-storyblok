@@ -9,18 +9,20 @@ const heroClasses = computed(() => {
 <template>
   <div
       v-editable="blok"
-      class="min-h-[500px] relative flex items-end justify-center my-6 rounded-[5px] overflow-hidden"
+      class="h-screen relative flex items-end justify-center rounded-[5px] overflow-hidden"
       :class="heroClasses"
   >
     <div
-        class="relative px-8 z-10 w-full bg-gradient-to-t from-black/70 via-black/50 to-transparent py-6"
+        class="relative px-8 z-10 w-full bg-gradient-to-t from-beer-foam/90 via-beer-foam/80 to-transparent py-6 pt-20"
     >
-      <h1 class="text-6xl text-white font-bold mb-3">
-        {{ blok.headline }}
-      </h1>
-      <h2 class="text-4xl text-white font-light font-handwritten">
-        {{ blok.subheadline }}
-      </h2>
+      <div class="container mx-auto">
+        <h1 class="text-6xl text-deep-basalt font-bold mb-3">
+          {{ blok.headline }}
+        </h1>
+        <h2 class="text-2xl font-light">
+          {{ blok.subheadline }}
+        </h2>
+      </div>
     </div>
     <img
         :src="blok.background_image.filename"
