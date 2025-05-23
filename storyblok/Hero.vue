@@ -13,7 +13,7 @@ const heroClasses = computed(() => {
       :class="heroClasses"
   >
     <div
-        class="relative px-8 z-10 w-full bg-gradient-to-t from-beer-foam/90 via-beer-foam/80 to-transparent py-6 pt-20"
+        class="relative px-8 z-10 w-full bg-gradient-to-t from-beer-foam via-beer-foam/80 to-transparent py-6 pt-20"
     >
       <div class="container mx-auto">
         <h1 class="text-6xl text-deep-basalt font-bold mb-3">

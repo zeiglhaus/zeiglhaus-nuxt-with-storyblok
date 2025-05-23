@@ -16,12 +16,12 @@ headerMenu.value = data.story.content.header_menu;
     <div
       class="container h-full mx-auto flex
       items-center justify-between
-      rounded-full bg-white/80 backdrop-blur-sm
-      px-6 py-4 mt-4
+      sm:rounded-full bg-white/80 backdrop-blur-sm
+      px-6 py-3 sm:mt-4
       shadow-md"
     >
       <NuxtLink to="/">
-        <h1 class="text-zh-green text-4xl font-bold font-fraunces">Zeiglhaus Parkstein e.V.</h1>
+        <h1 class="text-zh-green sm:text-4xl text-xl font-bold font-fraunces">Zeiglhaus Parkstein e.V.</h1>
       </NuxtLink>
       <nav class="text-weathered-basalt">
         <ul class="flex space-x-8 text-lg">
