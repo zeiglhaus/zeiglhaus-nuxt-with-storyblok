@@ -25,16 +25,16 @@ const containerJustify = computed(() =>
 </script>
 
 <template>
-  <div class="relative container mx-auto flex flex-col sm:flex-row gap-x-8 align-center my-8 sm:px-1/9 md:px-[5%]" :class="[containerJustify]">
-    <div class="md:w-1/3 sm:w-1/2 flex justify-center align-middle p-5" :class="[imageOrder]">
+  <div class="side-feature relative container mx-auto flex flex-col sm:flex-row gap-x-8 align-center my-4 sm:px-1/9 md:px-[5%]" :class="[containerJustify]">
+    <div class="md:w-1/2 sm:w-1/3 flex justify-center align-middle p-5" :class="[imageOrder]">
       <img
           :src="blok.image.filename"
           :alt="blok.image.alt"
           class="w-fill rounded-xl shadow-lg"
       >
     </div>
-    <div class="flex md:w-1/3 flex-col justify-center" :class="[textAlign]">
-      <h2 class="text-cooling-lava">{{ blok.headline }}</h2>
+    <div class="flex md:w-1/2 sm:w-2/3 flex-col justify-center px-8" :class="[textAlign]">
+      <h2 class="text-zh-green">{{ blok.headline }}</h2>
       <span v-html="resolvedRichText"/>
     </div>
   </div>
