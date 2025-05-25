@@ -24,3 +24,9 @@
         @apply text-xl text-zh-green font-bold;
     }
 }
+
+@layer components {
+    .card {
+        @apply p-4 bg-deep-basalt/5 rounded-xl
+    }
+}

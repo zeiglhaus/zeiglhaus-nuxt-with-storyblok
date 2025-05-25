@@ -8,7 +8,7 @@ const resolvedRichText = computed(() => renderRichText(blok.text))
 <template>
   <div
       v-editable="blok"
-      class="w-full p-4 bg-deep-basalt/5 rounded-xl text-center overflow-hidden flex flex-col gap-y-4"
+      class="w-full card text-center overflow-hidden flex flex-col gap-y-4"
   >
     <img v-if="blok.image" :src="blok.image?.filename" :alt="blok.image?.alt" class="w-full h-48 xl:h-72 object-cover rounded-lg" >
     <div>
