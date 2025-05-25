@@ -25,7 +25,11 @@ const containerJustify = computed(() =>
 </script>
 
 <template>
-  <div class="side-feature relative container mx-auto flex flex-col sm:flex-row gap-x-8 align-center my-4 sm:px-1/9 md:px-[5%]" :class="[containerJustify]">
+  <div
+      v-editable="blok"
+      class="side-feature relative container mx-auto flex flex-col sm:flex-row gap-x-8 align-center my-4 sm:px-1/9 md:px-[5%]"
+      :class="[containerJustify]"
+  >
     <div class="md:w-1/2 sm:w-1/3 flex justify-center align-middle p-5" :class="[imageOrder]">
       <img
           :src="blok.image.filename"
