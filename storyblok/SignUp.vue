@@ -70,4 +70,10 @@ href="#" class="block text-center signup-wiggle px-6 py-3 rounded-2xl font-handw
   75% { transform: rotate(-1deg) scale(1.07); }
   100% { transform: rotate(0deg) scale(1.05); }
 }
+
+@media (prefers-reduced-motion) {
+  .signup-wiggle:hover {
+    animation: none;
+  }
+}
 </style>
