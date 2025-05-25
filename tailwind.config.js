@@ -2,6 +2,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
     content: ['storyblok/**/*.{vue,js}', 'components/**/*.{vue,js}', 'pages/**/*.vue'],
+    plugins: [require('@tailwindcss/typography')],
     theme: {
         extend: {
             colors: {
@@ -24,7 +25,7 @@ module.exports = {
                 // CI colors
                 'zh-green': '#24905c'
             },
-                fontFamily: {
+            fontFamily: {
                 'fraunces': ['Fraunces', ...defaultTheme.fontFamily.serif],
                 'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
                 'handwritten': ['Caveat', 'cursive'],

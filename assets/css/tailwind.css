@@ -8,7 +8,7 @@
         @apply bg-beer-foam/80 bg-[url(../images/texture.png)];
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
         @apply font-fraunces;
     }
 
