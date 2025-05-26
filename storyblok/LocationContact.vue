@@ -9,13 +9,12 @@ const resolvedRichText = computed(() => renderRichText(blok.content))
 <template>
 <div
     v-editable="blok"
-class="container mx-auto my-12 gap-x-4 card flex">
-  <div class="prose flex-1 p-4" v-html="resolvedRichText"/>
-  <div class="flex-1">
+class="container mx-auto my-12 gap-x-4 card grid sm:grid-cols-2">
+  <div class="prose p-4" v-html="resolvedRichText"/>
+  <div class="rounded-lg overflow-hidden">
     <img
         :src="blok.map_image?.filename"
         :alt="blok.map_image?.alt"
-        class="object-cover rounded-lg"
     >
   </div>
 </div>
