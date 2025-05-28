@@ -5,7 +5,7 @@ const resolvedRichText = computed(() => renderRichText(props.blok.content))
 </script>
 
 <template>
-  <div v-editable="blok">
+  <div v-editable="blok" class="pt-20">
     <img
         v-if="blok.image?.filename"
         :src="blok.image.filename + '/m/1600x0'"
