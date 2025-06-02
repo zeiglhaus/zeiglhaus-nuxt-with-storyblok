@@ -35,7 +35,7 @@ const resolvedRichDescription = computed(() => renderRichText(props.blok.descrip
 </script>
 <template>
 <div v-editable="blok" class="w-full flex justify-stretch space-x-3" :class="[oldTextColorClass]">
-  <div class="w-20">
+  <div class="w-20 min-w-20 max-w-20">
     <h3
 class="text-4xl text-center p-2 border rounded-lg bg-white"
         :class="[{'text-volcanic-red border-weathered-basalt': !isOld}, { 'border-basalt-highlight text-basalt-highlight': isOld }]">
