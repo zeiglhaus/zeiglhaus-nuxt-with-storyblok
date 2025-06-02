@@ -1,15 +1,21 @@
 <script setup>
 const props = defineProps({ blok: Object })
 
+const layoutClasses = {
+  'full-width': 'h-screen',
+  'constrained': 'h-screen container mx-auto',
+  'half-height-full-width': 'min-h-[50vh]'
+}
+
 const heroClasses = computed(() => {
-  return props.blok.layout === 'constrained' ? 'container mx-auto' : ''
+  return layoutClasses[props.blok.layout || 'constrained']
 })
 </script>
 
 <template>
   <div
       v-editable="blok"
-      class="flex h-screen relative flex-col justify-between rounded-[5px] overflow-hidden"
+      class="flex relative flex-col justify-between rounded-[5px] overflow-hidden"
       :class="heroClasses"
   >
     <div class="container mx-auto z-10 flex justify-end">
