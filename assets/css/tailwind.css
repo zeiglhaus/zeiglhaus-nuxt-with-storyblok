@@ -13,7 +13,7 @@
     }
 
     h1 {
-        @apply text-5xl text-zh-green;
+        @apply text-5xl;
     }
 
     h2 {
@@ -21,7 +21,7 @@
     }
 
     h3 {
-        @apply text-xl text-zh-green font-bold;
+        @apply text-xl font-bold;
     }
 }
 
