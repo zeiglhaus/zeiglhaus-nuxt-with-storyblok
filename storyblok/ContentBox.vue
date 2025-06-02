@@ -9,7 +9,7 @@ const resolvedRichText = computed(() => renderRichText(blok.content))
     v-editable="blok"
 class="container mx-auto my-12 card" :class="{'grid gap-x-4 sm:grid-cols-2': blok.image}">
   <div class="prose p-4" v-html="resolvedRichText"/>
-  <div v-if="blok.image">
+  <div v-if="blok.image.filename">
     <img
         :src="blok.image.filename"
         :alt="blok.image.alt"
