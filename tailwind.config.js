@@ -30,6 +30,15 @@ module.exports = {
                 'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
                 'handwritten': ['Caveat', 'cursive'],
             },
+            typography: {
+                DEFAULT: {
+                    css: {
+                        h1: {
+                            color: '#24905c',
+                        },
+                    },
+                },
+            },
         }
     }
 }
