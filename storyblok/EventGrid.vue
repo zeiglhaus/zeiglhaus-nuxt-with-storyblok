@@ -1,9 +1,9 @@
 <template>
   <div v-editable="blok" class="container mx-auto card">
     <div v-for="yearData in eventsByYearAndMonth" :key="yearData.yearKey" class="mb-8 mx-6">
-      <h2 class="text-6xl font-bold mb-4 text-volcanic-red pb-4 border-b border-volcanic-red">{{ yearData.yearKey }}</h2>
+      <h2 class="text-5xl font-bold mb-4 pt-4 text-center text-volcanic-red pb-4 border-b border-volcanic-red">{{ yearData.yearKey }}</h2>
       <section class="px-4">
-        <div v-for="monthData in yearData.months" :key="monthData.monthKey" class="mb-6">
+        <div v-for="monthData in yearData.months" :key="monthData.monthKey" class="mb-6 md:max-w-screen-lg">
           <h2 class="text-2xl font-semibold mb-2" :class="{ 'text-gray-500': monthData.isOld }">{{ getGermanMonthName(monthData.monthKey) }}</h2>
           <div class="space-y-2 bg-deep-basalt/5 p-2 border-l-2 border-deep-basalt ml-3 pl-3 rounded-r-lg">
             <StoryblokComponent
