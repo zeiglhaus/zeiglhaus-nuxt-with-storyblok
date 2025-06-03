@@ -18,7 +18,7 @@ const heroClasses = computed(() => {
       class="flex relative flex-col justify-between overflow-hidden"
       :class="heroClasses"
   >
-    <div class="container mx-auto z-10 flex justify-end">
+    <div class="container mx-auto z-[11] flex justify-end">
         <div class="relative animate-swing">
           <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-32">
             <div class="flex space-x-16">
@@ -33,9 +33,9 @@ const heroClasses = computed(() => {
         </div>
     </div>
     <div
-        class="relative px-8 z-10 w-full bg-gradient-to-t from-beer-foam via-beer-foam/80 to-transparent py-6 pt-20"
+        class="relative px-8 pt-20 z-10 w-full py-6"
     >
-      <div class="md:w-2/3">
+      <div class="relative z-10 md:w-2/3">
         <h1 class="text-6xl text-deep-basalt font-bold mb-3">
           {{ blok.headline }}
         </h1>
@@ -43,6 +43,7 @@ const heroClasses = computed(() => {
           {{ blok.subheadline }}
         </h2>
       </div>
+      <div class="absolute z-1 -top-20 bottom-0 right-0 left-0 z-0 object-cover bg-beer-foam bg-fade-to-top"/>
     </div>
     <img
         class="absolute top-0 left-0 z-0 w-full h-full object-cover"

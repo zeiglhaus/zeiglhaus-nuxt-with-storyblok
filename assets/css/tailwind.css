@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+    .bg-beer-foam {
+        @apply bg-beer-foam/80 bg-[url(../images/texture.png)];
+    }
+
     body {
         @apply font-sans;
-        @apply bg-beer-foam/80 bg-[url(../images/texture.png)];
+        @apply bg-beer-foam;
     }
 
     h1, h2, h3, h4 {
@@ -28,5 +32,12 @@
 @layer components {
     .card {
         @apply p-4 bg-deep-basalt/5 rounded-xl
+    }
+}
+
+@layer utilities {
+    .bg-fade-to-top {
+        mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     }
 }
