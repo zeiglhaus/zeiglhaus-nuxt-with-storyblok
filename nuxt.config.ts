@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
+      title: 'Zeiglhaus Parkstein e.V.',
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]

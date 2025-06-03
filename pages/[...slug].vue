@@ -19,6 +19,21 @@ if (!isPreview) {
   }
 }
 
+// Set page title
+const pageTitle = computed(() => {
+  if (story.value?.content?.title) {
+    return `${story.value.content.title} - Zeiglhaus Parkstein e.V.`
+  }
+  if (story.value?.name && story.value.name !== 'Home') {
+    return `${story.value.name} - Zeiglhaus Parkstein e.V.`
+  }
+  return 'Zeiglhaus Parkstein e.V.'
+})
+
+useHead({
+  title: pageTitle
+})
+
 onMounted(() => {
   if (isPreview && story.value && story.value.id) {
     useStoryblokBridge(
