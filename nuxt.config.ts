@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
+  ssr: process.env.NUXT_PUBLIC_NODE_ENV === 'production',
   devtools: { enabled: true },
   modules: [
     '@nuxt/eslint',
@@ -38,5 +39,10 @@ export default defineNuxtConfig({
         'img-src': '*'
       },
     },
+  },
+  runtimeConfig: {
+    public: {
+      NODE_ENV: process.env.NODE_ENV
+    }
   },
 })
