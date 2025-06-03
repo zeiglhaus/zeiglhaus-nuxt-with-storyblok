@@ -43,10 +43,10 @@ class="text-4xl text-center p-2 border rounded-lg bg-white"
     </h3>
   </div>
   <div class="grow">
-    <div class="flex justify-start place-items-baseline space-x-2">
+    <div class="flex justify-start flex-wrap place-items-baseline gap-x-2">
       <h3 class="font-normal">{{ blok.title }}</h3>
       <div class="text-sm text-iron-basalt">{{ date.day }}.{{ date.month }}.{{ date.year }}</div>
-      <div v-if="isSoon" class="px-2 ml-2 text-sm rounded-full bg-molten-amber text-white">Bald!</div>
+      <div v-if="isSoon" class="px-2 text-sm rounded-full bg-molten-amber text-white">Bald!</div>
     </div>
     <div>
       <span class="text-md font-bold" :class="{'text-volcanic-red': !isOld, 'text-basalt-highlight': isOld}">{{ blok.time }}</span>

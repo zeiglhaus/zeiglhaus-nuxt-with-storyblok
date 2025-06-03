@@ -19,7 +19,7 @@ const heroClasses = computed(() => {
       :class="heroClasses"
   >
     <div class="container mx-auto z-[11] flex justify-end">
-        <div class="relative animate-swing">
+        <div class="relative animate-swing max-w-screen">
           <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-32">
             <div class="flex space-x-16">
               <div class="w-0.5 h-32 bg-gray-600"/>
@@ -27,7 +27,7 @@ const heroClasses = computed(() => {
             </div>
           </div>
 
-          <div class="mt-28">
+          <div class="mt-28 max-sm:max-w-[80%] mx-auto">
             <OpenSign>Betrieb jeden Donnerstag ab 18 Uhr geöffnet!</OpenSign>
           </div>
         </div>
@@ -36,10 +36,10 @@ const heroClasses = computed(() => {
         class="relative px-8 pt-20 z-10 w-full py-6"
     >
       <div class="relative z-10 md:w-2/3">
-        <h1 class="text-6xl text-deep-basalt font-bold mb-3">
+        <h1 class="text-4xl md:text-6xl text-deep-basalt font-bold mb-3">
           {{ blok.headline }}
         </h1>
-        <h2 class="text-2xl font-light">
+        <h2 class="text-lg md:text-2xl font-light">
           {{ blok.subheadline }}
         </h2>
       </div>

@@ -12,7 +12,7 @@ footerMenu.value = data.story.content.footer_links;
 </script>
 <template>
 <div class="p-6">
-  <ul class="flex space-x-8 text-sm justify-center">
+  <ul class="flex justify-center flex-wrap gap-x-8 px-4 text-sm">
     <li>Zeiglhaus Parkstein e.V.</li>
     <li v-for="blok in footerMenu" :key="blok._uid">
       <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-molten-amber">
