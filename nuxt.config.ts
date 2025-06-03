@@ -3,6 +3,13 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   ssr: process.env.NUXT_PUBLIC_NODE_ENV === 'production',
   devtools: { enabled: true },
+  app: {
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+      ]
+    }
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/icon',
