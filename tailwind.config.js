@@ -36,6 +36,9 @@ module.exports = {
                         h1: {
                             color: '#24905c',
                         },
+                        p: {
+                            color: '#000000',
+                        },
                     },
                 },
             },
