@@ -61,6 +61,7 @@ export default defineNuxtConfig({
         'base-uri': "'self'"
       },
       xContentTypeOptions: false,
+      xFrameOptions: false,
     },
   },
   runtimeConfig: {
