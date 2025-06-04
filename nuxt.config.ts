@@ -53,6 +53,7 @@ export default defineNuxtConfig({
         'frame-ancestors': 'app.storyblok.com',
         'img-src': '* data:',
         'script-src': "'self' 'unsafe-eval' https:",
+        'script-src-attr': "'unsafe-inline'",
         'style-src': "'self' 'unsafe-inline' https:",
         'font-src': "'self' https: data:",
         'connect-src': "'self' https: wss:",
