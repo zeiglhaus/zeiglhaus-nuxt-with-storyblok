@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'frame-ancestors': 'app.storyblok.com',
-        'img-src': '* data:',
+        'img-src': "'self' data:",
         'script-src': `'self' 'unsafe-eval' https: ${process.env.NODE_ENV === 'development' ? "'unsafe-inline'" : ''}`,
         'script-src-attr': "'unsafe-inline'",
         'style-src': "'self' 'unsafe-inline' https:",
