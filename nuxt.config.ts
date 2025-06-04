@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts'
   ],
   image: {
-    domains: ['a.storyblok.com'],
+    provider: 'storyblok',
     storyblok: {
       baseURL: 'https://a.storyblok.com'
     },
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'frame-ancestors': 'app.storyblok.com',
-        'img-src': "'self' data:",
+        'img-src': "'self' a.storyblok.com data:",
         'script-src': `'self' 'unsafe-eval' https: ${process.env.NODE_ENV === 'development' ? "'unsafe-inline'" : ''}`,
         'script-src-attr': "'unsafe-inline'",
         'style-src': "'self' 'unsafe-inline' https:",
