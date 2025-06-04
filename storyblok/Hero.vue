@@ -45,11 +45,13 @@ const heroClasses = computed(() => {
       </div>
       <div class="absolute z-1 -top-20 bottom-0 right-0 left-0 z-0 object-cover bg-beer-foam bg-fade-to-top"/>
     </div>
-    <img
+    <NuxtImg
         class="absolute top-0 left-0 z-0 w-full h-full object-cover"
         :src="blok.background_image.filename"
         :alt="blok.background_image.alt"
-    >
+        width="1920"
+        height="1080"
+    />
   </div>
 </template>
 

@@ -6,12 +6,14 @@ const resolvedRichText = computed(() => renderRichText(props.blok.content))
 
 <template>
   <div v-editable="blok" class="pt-16 md:pt-24">
-    <img
+    <NuxtImg
         v-if="blok.image?.filename"
-        :src="blok.image.filename + '/m/1600x0'"
+        :src="blok.image.filename"
         :alt="blok.image.alt"
         class="w-full h-[360px] lg:h-[450px] object-cover"
-    >
+        width="1600"
+        height="450"
+    />
     <div class="container mx-auto mb-12 p-2">
       <h1 class="text-4xl font-bold mb-4 break-words">{{ blok.title }}</h1>
       <h2 class="text-2xl font-bold mb-4">

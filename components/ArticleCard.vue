@@ -8,11 +8,13 @@ defineProps({ article: Object, slug: String })
       :to="'/' + slug"
       class="w-full h-full bg-[#f7f6fd] rounded-[5px] text-center overflow-hidden"
   >
-    <img
-        :src="article.image.filename + '/m/600x0'"
+    <NuxtImg
+        :src="article.image.filename"
         :alt="article.image.alt"
         class="w-full h-48 xl:h-72 object-cover pointer-events-none"
-    >
+        width="600"
+        height="288"
+    />
     <div class="p-4">
       <h3 class="text-xl text-[#1d243d] font-bold mb-3">
         {{ article.title }}

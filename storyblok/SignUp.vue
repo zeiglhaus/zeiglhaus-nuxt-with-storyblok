@@ -44,11 +44,13 @@ href="#" class="block text-center signup-wiggle px-6 py-3 rounded-2xl font-handw
       </div>
     </div>
   </div>
-  <img
+  <NuxtImg
       class="z-0 absolute top-0 left-0 z-0 w-full h-full object-cover"
       :src="blok.background_image.filename"
       :alt="blok.background_image.alt"
-  >
+      width="1200"
+      height="800"
+  />
 </div>
 </template>
 

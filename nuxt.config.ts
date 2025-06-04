@@ -14,11 +14,18 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxt/icon',
+    '@nuxt/image',
     'nuxt-security',
     ['@storyblok/nuxt', { accessToken: 'XVm3HgGZZ3p3kEeNr4pnpAtt' }],
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts'
   ],
+  image: {
+    domains: ['a.storyblok.com'],
+    storyblok: {
+      baseURL: 'https://a.storyblok.com'
+    },
+  },
   devServer: {
     port: 3001,
     https: {

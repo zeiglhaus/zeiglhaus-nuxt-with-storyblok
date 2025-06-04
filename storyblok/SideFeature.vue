@@ -31,11 +31,13 @@ const containerJustify = computed(() =>
       :class="[containerJustify]"
   >
     <div class="md:w-1/2 sm:w-1/3 flex justify-center align-middle p-5" :class="[imageOrder]">
-      <img
+      <NuxtImg
           :src="blok.image.filename"
           :alt="blok.image.alt"
           class="w-fill rounded-xl shadow-lg"
-      >
+          width="500"
+          height="400"
+      />
     </div>
     <div class="flex md:w-1/2 sm:w-2/3 flex-col justify-center px-8" :class="[textAlign]">
       <h2 class="text-zh-green">{{ blok.headline }}</h2>
