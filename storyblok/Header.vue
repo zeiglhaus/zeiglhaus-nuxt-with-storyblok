@@ -2,6 +2,7 @@
 const storyblokApi = useStoryblokApi();
 
 const headerMenu = ref(null);
+const headerMenuIcons = ref(null);
 const isMobileMenuOpen = ref(false);
 
 const { data } = await storyblokApi.get('cdn/stories/config', {
@@ -10,6 +11,7 @@ const { data } = await storyblokApi.get('cdn/stories/config', {
 })
 
 headerMenu.value = data.story.content.header_menu;
+headerMenuIcons.value = data.story.content.header_menu_icons;
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value;
@@ -35,10 +37,20 @@ const closeMobileMenu = () => {
         </NuxtLink>
 
         <nav class="hidden md:flex text-weathered-basalt flex-col justify-center">
-          <ul class="flex space-x-8 text-lg">
+          <ul class="flex gap-x-4 text-lg">
             <li v-for="blok in headerMenu" :key="blok._uid">
               <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-molten-amber">
                 {{ blok.link.story.name }}
+              </NuxtLink>
+            </li>
+            <li v-if="headerMenuIcons?.length" class="flex gap-x-2">
+              <NuxtLink
+v-for="blok in headerMenuIcons"
+                        :to="blok.link.url"
+                        class="hover:text-molten-amber flex items-center"
+                        target="_blank"
+              >
+                <Icon :name="blok.icon" class="w-6 h-6" />
               </NuxtLink>
             </li>
           </ul>
@@ -63,6 +75,16 @@ const closeMobileMenu = () => {
                   @click="closeMobileMenu"
               >
                 {{ blok.link.story.name }}
+              </NuxtLink>
+            </li>
+            <li class="py-2"><hr class="border-volcanic-red"></li>
+            <li v-for="blok in headerMenuIcons">
+              <NuxtLink
+:href="blok.link.url"
+                        class="flex items-center text-weathered-basalt hover:text-molten-amber text-lg py-2"
+                        @click="closeMobileMenu"
+              >
+                <Icon :name="blok.icon" class="w-6 h-6 mr-1" /> {{ blok.title }}
               </NuxtLink>
             </li>
           </ul>
