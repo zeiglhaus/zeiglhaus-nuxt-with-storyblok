@@ -2,7 +2,7 @@
 const props = defineProps({ blok: Object })
 
 const layoutClasses = {
-  'full-width': 'h-screen',
+  'full-width': 'h-screen md:min-h-[500px]',
   'constrained': 'h-screen container mx-auto rounded-lg',
   'half-height-full-width': 'min-h-[50vh]'
 }
@@ -19,7 +19,7 @@ const heroClasses = computed(() => {
       :class="heroClasses"
   >
     <div class="container mx-auto z-[11] flex justify-end">
-        <div class="relative animate-swing max-w-screen">
+        <div class="relative animate-swing max-w-screen h-0">
           <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-32">
             <div class="flex space-x-16">
               <div class="w-0.5 h-32 bg-gray-600"/>
@@ -35,8 +35,8 @@ const heroClasses = computed(() => {
     <div
         class="relative px-8 pt-20 z-10 w-full py-6"
     >
-      <div class="relative z-10 md:w-2/3">
-        <h1 class="text-4xl md:text-6xl text-deep-basalt font-bold mb-3">
+      <div class="relative z-10 lg:w-2/3">
+        <h1 class="text-4xl md:text-6xl font-bold mb-3">
           {{ blok.headline }}
         </h1>
         <h2 class="text-lg md:text-2xl font-light">
