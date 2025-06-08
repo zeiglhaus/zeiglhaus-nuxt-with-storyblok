@@ -20,7 +20,7 @@ function classForIcon(icon) {
     v-editable="blok"
     class="container mx-auto my-8 card grid md:grid-cols-2 grid-cols-1 gap-x-4">
   <div class="p-4">
-    <h2 class="mb-4 text-deep-basalt">{{ blok.title }}</h2>
+    <h2 class="mb-4">{{ blok.title }}</h2>
     <p v-if="resolvedRichText" class="prose" v-html="resolvedRichText"/>
   </div>
   <div class="flex flex-col justify-center gap-2 sm:gap-4">
