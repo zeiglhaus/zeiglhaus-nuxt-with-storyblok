@@ -51,6 +51,11 @@ const heroClasses = computed(() => {
         :alt="blok.background_image.alt"
         width="1920"
         height="1080"
+        quality="80"
+        priority
+        preload
+        loading="eager"
+        fetchpriority="high"
     />
   </div>
 </template>
