@@ -72,7 +72,7 @@ const eventsByYearAndMonth = computed(() => {
         events: grouped[yearKey][monthKey].sort((a, b) => {
           const dateA = new Date(a.date || 0)
           const dateB = new Date(b.date || 0)
-          return dateA - dateB
+          return dateB - dateA
         })
       })
     })
