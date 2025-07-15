@@ -42,7 +42,7 @@ class="text-4xl text-center p-2 border rounded-lg bg-white"
       {{ date.day }}
     </h3>
   </div>
-  <div class="grow">
+  <div class="grow min-w-0">
     <div class="flex justify-start flex-wrap place-items-baseline gap-x-2">
       <h3 class="font-normal">{{ blok.title }}</h3>
       <div class="text-sm text-iron-basalt">{{ date.day }}.{{ date.month }}.{{ date.year }}</div>
@@ -51,7 +51,7 @@ class="text-4xl text-center p-2 border rounded-lg bg-white"
     <div>
       <span class="text-md font-bold" :class="{'text-volcanic-red': !isOld, 'text-basalt-highlight': isOld}">{{ blok.time }}</span>
     </div>
-    <div class="prose" v-html="resolvedRichDescription"/>
+    <div class="prose break-words" v-html="resolvedRichDescription"/>
   </div>
 </div>
 </template>
