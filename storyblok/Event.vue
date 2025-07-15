@@ -42,7 +42,7 @@ class="text-4xl text-center p-2 border rounded-lg bg-white"
       {{ date.day }}
     </h3>
   </div>
-  <div class="grow min-w-0">
+  <div class="grow min-w-0 relative">
     <div class="flex justify-start flex-wrap place-items-baseline gap-x-2">
       <h3 class="font-normal">{{ blok.title }}</h3>
       <div class="text-sm text-iron-basalt">{{ date.day }}.{{ date.month }}.{{ date.year }}</div>
@@ -51,7 +51,16 @@ class="text-4xl text-center p-2 border rounded-lg bg-white"
     <div>
       <span class="text-md font-bold" :class="{'text-volcanic-red': !isOld, 'text-basalt-highlight': isOld}">{{ blok.time }}</span>
     </div>
-    <div class="prose break-words" v-html="resolvedRichDescription"/>
+    <NuxtLink :href="props.blok.image?.filename" target="_blank" class="z-[1]">
+      <NuxtImg
+          v-if="props.blok.image?.filename"
+          :src="props.blok.image?.filename"
+          :alt="props.blok.image?.alt"
+          class="sm:float-left sm:m-4 sm:mt-2 sm:ml-2 w-48 h-48 object-cover rounded-lg"
+          width="128" height="128"
+      />
+    </NuxtLink>
+    <div class="prose break-words z-0" v-html="resolvedRichDescription"/>
   </div>
 </div>
 </template>
