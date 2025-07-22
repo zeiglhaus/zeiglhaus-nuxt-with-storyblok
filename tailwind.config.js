@@ -23,12 +23,13 @@ module.exports = {
                 'beer-foam': '#F8F4E3',
 
                 // CI colors
-                'zh-green': '#24905c'
+                'zh-green': '#7B9F6E'
             },
             fontFamily: {
-                'fraunces': ['Fraunces', ...defaultTheme.fontFamily.serif],
                 'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
                 'handwritten': ['Caveat', 'cursive'],
+                'antic-slab': ['Antic Slab', ...defaultTheme.fontFamily.serif],
+                'fira-mono': ['Fira Mono', ...defaultTheme.fontFamily.sans]                
             },
             typography: {
                 DEFAULT: {

@@ -35,13 +35,16 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Fraunces: true,
       Montserrat: {
         // Common weights for body text:
         wght: [300, 400, 500, 600, 700],
         ital: [100]
       },
-      Caveat: true
+      Caveat: true,
+      'Antic Slab': true,
+      'Fira Mono': {
+        wght: [400, 700]
+      }
     },
     display: 'swap',
     download: true,

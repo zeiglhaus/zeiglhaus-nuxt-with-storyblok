@@ -33,7 +33,7 @@ const closeMobileMenu = () => {
     >
       <div class="flex justify-between items-center">
         <NuxtLink to="/">
-          <h1 class="text-zh-green sm:text-4xl text-xl font-bold font-fraunces">Zeiglhaus Parkstein e.V.</h1>
+          <h1 class="text-zh-green sm:text-4xl text-xl font-bold font-antic-slab">Zeiglhaus Parkstein e.V.</h1>
         </NuxtLink>
 
         <nav class="hidden md:flex text-weathered-basalt flex-col justify-center">
