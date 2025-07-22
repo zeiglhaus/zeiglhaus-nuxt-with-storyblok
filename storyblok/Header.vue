@@ -45,10 +45,11 @@ const closeMobileMenu = () => {
             </li>
             <li v-if="headerMenuIcons?.length" class="flex gap-x-2">
               <NuxtLink
-v-for="blok in headerMenuIcons"
-                        :to="blok.link.url"
-                        class="hover:text-molten-amber flex items-center"
-                        target="_blank"
+                v-for="blok in headerMenuIcons"
+                :key="blok._uid"
+                :to="blok.link.url"
+                class="hover:text-molten-amber flex items-center"
+                target="_blank"
               >
                 <Icon :name="blok.icon" class="w-6 h-6" />
               </NuxtLink>
@@ -78,11 +79,11 @@ v-for="blok in headerMenuIcons"
               </NuxtLink>
             </li>
             <li class="py-2"><hr class="border-volcanic-red"></li>
-            <li v-for="blok in headerMenuIcons">
+            <li v-for="blok in headerMenuIcons" :key="blok._uid">
               <NuxtLink
-:href="blok.link.url"
-                        class="flex items-center text-weathered-basalt hover:text-molten-amber text-lg py-2"
-                        @click="closeMobileMenu"
+                :href="blok.link.url"
+                class="flex items-center text-weathered-basalt hover:text-molten-amber text-lg py-2"
+                @click="closeMobileMenu"
               >
                 <Icon :name="blok.icon" class="w-6 h-6 mr-1" /> {{ blok.title }}
               </NuxtLink>
