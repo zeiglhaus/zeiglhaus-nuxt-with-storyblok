@@ -34,7 +34,10 @@ const nextThreeEvents = computed(() => {
 
 <template>
   <div v-editable="blok" class="container mx-auto my-12 card bg-transparent border border-volcanic-red">
-    <h2 class="text-volcanic-red mb-4">{{ blok.title }}</h2>
+    <h2 class="text-volcanic-red mb-4 flex items-center gap-2">
+      <Icon name="mdi:calendar" class="text-volcanic-red" />
+      {{ blok.title }}
+    </h2>
     <div class="grid gap-x-12 gap-y-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       <NuxtLink
 v-for="event in nextThreeEvents"
