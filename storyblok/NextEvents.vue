@@ -34,19 +34,19 @@ const nextThreeEvents = computed(() => {
 
 <template>
   <div v-editable="blok" class="container mx-auto my-12 card">
-    <h2 class="text-volcanic-red mb-4 flex items-center gap-2">
-      <Icon name="mdi:calendar" class="text-volcanic-red" />
+    <h2 class="text-zh-green mb-4 flex items-center gap-2">
+      <Icon name="mdi:calendar" />
       {{ blok.title }}
     </h2>
-    <div class="grid gap-x-12 gap-y-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+<div class="grid grid-cols-2 lg:flex gap-x-4 gap-y-6 flex-wrap">
       <NuxtLink
 v-for="event in nextThreeEvents"
                 :key="event._uid"
                 :to="`/${story.full_slug}`"
-                class="card flex gap-x-4 bg-white hover:text-iron-basalt group border-1 border-weathered-basalt hover:shadow-md">
+                class="grow shrink card p-3 flex basis-20 gap-x-4 bg-white hover:text-iron-basalt group border-1 border-weathered-basalt hover:shadow-md">
         <div>
           <h3
-              class="text-4xl p-2 border rounded-lg bg-white text-volcanic-red border-weathered-basalt">
+              class="text-2xl p-1 py-0.5 border rounded-lg bg-volcanic-red/5 text-volcanic-red border-volcanic-red/30">
             {{ event.short_date }}
           </h3>
         </div>
@@ -55,6 +55,11 @@ v-for="event in nextThreeEvents"
           <p class="text-gray-600 mt-2 group-hover:text-iron-basalt">am {{ event.formatted_date }}</p>
         </div>
       </NuxtLink>
+      <div class="flex basis-20 md:basis-0 grow lg:grow-0 shrink flex-col justify-center place-items-center">
+        <NuxtLink href="/termine" class="text-zh-green hover:underline whitespace-nowrap">
+          <Icon name="mdi:page-next" class="align-text-bottom text-xl" /> Alle Termine
+        </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
