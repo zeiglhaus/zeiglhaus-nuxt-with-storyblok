@@ -16,5 +16,10 @@
 </template>
 
 <script setup>
-defineProps({ blok: Object })
+defineProps({ 
+  blok: { 
+    type: Object, 
+    default: () => ({}) 
+  } 
+})
 </script>

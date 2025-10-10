@@ -1,5 +1,10 @@
 <script setup>
-const { blok } = defineProps({ blok: Object })
+const { blok } = defineProps({ 
+  blok: { 
+    type: Object, 
+    required: true 
+  } 
+})
 
 const imageAlignment = computed(() => blok.alignment || 'left')
 const resolvedRichText = computed(() => renderRichText(blok.text))

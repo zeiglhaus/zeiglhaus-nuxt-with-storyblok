@@ -1,5 +1,10 @@
 <script setup>
-const { blok } = defineProps({ blok: Object })
+const { blok } = defineProps({ 
+  blok: { 
+    type: Object, 
+    required: true 
+  } 
+})
 
 const resolvedRichText = computed(() => renderRichText(blok.content))
 </script>

@@ -1,5 +1,10 @@
 <script setup>
-defineProps({ blok: Object })
+defineProps({ 
+  blok: { 
+    type: Object, 
+    default: () => ({}) 
+  } 
+})
 
 const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production'
 

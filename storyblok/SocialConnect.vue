@@ -1,5 +1,10 @@
 <script setup>
-const { blok } = defineProps({ blok: Object })
+const { blok } = defineProps({ 
+  blok: { 
+    type: Object, 
+    required: true 
+  } 
+})
 
 const resolvedRichText = computed(() => renderRichText(blok.subtext))
 
@@ -26,12 +31,12 @@ function classForIcon(icon) {
   <div class="flex flex-col justify-center gap-2 sm:gap-4">
     <NuxtLink
         v-for="button in blok.buttons"
+        :key="button.$id"
         :to="button.link.url"
         target="_blank"
         class="group w-full sm:w-auto flex items-center gap-3 px-4 py-2 sm:py-3
                 text-white font-medium rounded-md
                transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.02]"
-        :key="button.$id"
         :class="classForIcon(button.icon)"
     >
       <Icon :name="button.icon" class="flex-shrink-0 w-8 h-8" />

@@ -1,5 +1,14 @@
 <script setup>
-defineProps({ article: Object, slug: String })
+defineProps({ 
+  article: { 
+    type: Object, 
+    default: () => ({}) 
+  }, 
+  slug: { 
+    type: String, 
+    default: '' 
+  } 
+})
 </script>
 
 <template>

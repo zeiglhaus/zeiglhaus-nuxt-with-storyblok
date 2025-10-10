@@ -1,5 +1,10 @@
 <script setup>
-const { blok } = defineProps({ blok: Object })
+const { blok } = defineProps({ 
+  blok: { 
+    type: Object, 
+    required: true 
+  } 
+})
 
 const resolvedRichText = computed(() => renderRichText(blok.text))
 </script>
@@ -27,9 +32,9 @@ class="mt-2 max-w-full
           class="grid mt-5 sm:grid-cols-3 gap-2 my-2 place-items-stretch"
       >
         <StoryblokComponent
-            v-for="blok in blok.subscriptions"
-            :key="blok._uid"
-            :blok="blok"
+            v-for="subscription in blok.subscriptions"
+            :key="subscription._uid"
+            :blok="subscription"
         />
       </div>
       <div class="text-center">
