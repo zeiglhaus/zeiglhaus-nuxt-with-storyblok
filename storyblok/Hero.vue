@@ -43,7 +43,7 @@ const heroClasses = computed(() => {
           {{ blok.subheadline }}
         </h2>
       </div>
-      <div class="absolute z-1 -top-20 bottom-0 right-0 left-0 z-0 object-cover bg-beer-foam bg-fade-to-top"/>
+      <div class="absolute z-1 -top-20 bottom-0 right-0 left-0 z-0 object-cover bg-white bg-fade-to-top"/>
     </div>
     <NuxtImg
         class="absolute top-0 left-0 z-0 w-full h-full object-cover"
