@@ -8,7 +8,7 @@ const resolvedRichText = computed(() => renderRichText(blok.text))
 <template>
   <div
       v-editable="blok"
-      class="w-full card text-center overflow-hidden flex flex-col gap-y-4 p-0 rounded-lg overflow-hidden"
+      class="w-full card text-center flex flex-col gap-y-4 p-0 rounded-lg overflow-hidden"
   >
     <NuxtImg v-if="blok.image" :src="blok.image?.filename" :alt="blok.image?.alt" class="w-full h-48 xl:h-72 object-cover " width="400" height="300" />
     <div p-4>
