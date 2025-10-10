@@ -6,7 +6,7 @@ const resolvedRichText = computed(() => renderRichText(blok.text))
 </script>
 
 <template>
-  <div v-editable="blok" class="p-3 bg-white/75 text-deep-basalt rounded-lg flex flex-col gap-1">
+  <div v-editable="blok" class="p-3 bg-white/75 text-deep-basalt rounded-sm flex flex-col gap-1">
     <h4 class="text-cooling-lava text-lg">
       {{ blok.title }}
     </h4>

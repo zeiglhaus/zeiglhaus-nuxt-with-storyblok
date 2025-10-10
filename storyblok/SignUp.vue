@@ -6,7 +6,7 @@ const resolvedRichText = computed(() => renderRichText(blok.text))
 <template>
 <div
     v-editable="blok"
-    class="container mx-auto flex relative rounded-xl min-h-96 overflow-hidden place-items-stretch"
+    class="container mx-auto flex relative rounded-md min-h-96 overflow-hidden place-items-stretch"
 >
   <div class="z-10 md:py-20 md:px-12 py-8 px-8 flex flex-col justify-center place-items-center w-full bg-teal-900/80 text-white">
     <div class="md:max-w-3xl">
@@ -37,7 +37,7 @@ class="mt-2 max-w-full
       </div>
       <div class="flex flex-col justify-stretch md:place-items-center mt-8">
         <a
-href="#" class="block text-center signup-wiggle px-6 py-3 rounded-2xl font-handwritten text-2xl bg-molten-amber
+href="#" class="block text-center signup-wiggle px-6 py-3 rounded-md font-handwritten text-2xl bg-molten-amber
        hover:bg-volcanic-red hover:shadow-[0_0_15px] hover:shadow-basalt-highlight transition-all transition-300">
           {{ blok.sign_up_button }}
         </a>

@@ -13,7 +13,7 @@ class="container mx-auto my-12 card" :class="{'grid gap-x-4 sm:grid-cols-2': blo
     <NuxtImg
         :src="blok.image.filename"
         :alt="blok.image.alt"
-        class="rounded-lg"
+        class="rounded-sm"
         width="600"
         height="400"
     />

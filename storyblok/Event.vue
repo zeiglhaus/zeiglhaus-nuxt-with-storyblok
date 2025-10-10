@@ -37,7 +37,7 @@ const resolvedRichDescription = computed(() => renderRichText(props.blok.descrip
 <div v-editable="blok" class="w-full flex justify-stretch space-x-3" :class="[oldTextColorClass]">
   <div class="w-20 min-w-20 max-w-20">
     <h3
-class="text-4xl text-center p-2 border rounded-lg bg-white"
+class="text-4xl text-center p-2 border rounded-md bg-white"
         :class="[{'text-volcanic-red border-weathered-basalt': !isOld}, { 'border-basalt-highlight text-basalt-highlight': isOld }]">
       {{ date.day }}
     </h3>
@@ -56,7 +56,7 @@ class="text-4xl text-center p-2 border rounded-lg bg-white"
           v-if="props.blok.image?.filename"
           :src="props.blok.image?.filename"
           :alt="props.blok.image?.alt"
-          class="sm:float-left sm:m-4 sm:mt-2 sm:ml-2 w-48 h-48 object-cover rounded-lg"
+          class="sm:float-left sm:m-4 sm:mt-2 sm:ml-2 w-48 h-48 object-cover rounded-sm"
           width="128" height="128"
       />
     </NuxtLink>

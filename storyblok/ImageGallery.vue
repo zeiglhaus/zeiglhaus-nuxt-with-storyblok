@@ -7,7 +7,7 @@ const { blok } = defineProps({ blok: Object })
     v-editable="blok"
     class="container mx-auto mt-12"
   >
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 rounded-xl overflow-hidden">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 rounded-md overflow-hidden">
       <div
         v-for="(image, index) in blok.images"
         :key="index"

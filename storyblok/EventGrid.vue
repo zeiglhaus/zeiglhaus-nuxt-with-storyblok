@@ -5,7 +5,7 @@
       <section class="md:px-4">
         <div v-for="monthData in yearData.months" :key="monthData.monthKey" class="mb-6 md:max-w-screen-lg">
           <h2 class="text-2xl font-semibold mb-2" :class="{ 'text-gray-500': monthData.isOld }">{{ getGermanMonthName(monthData.monthKey) }}</h2>
-          <div class="space-y-2 bg-deep-basalt/5 p-2 border-l-2 border-deep-basalt ml-3 pl-3 rounded-r-lg">
+          <div class="space-y-2 bg-deep-basalt/5 p-2 border-l-2 border-deep-basalt ml-3 pl-3 rounded-r-md">
             <StoryblokComponent
                 v-for="event in monthData.events"
                 :key="event._uid"

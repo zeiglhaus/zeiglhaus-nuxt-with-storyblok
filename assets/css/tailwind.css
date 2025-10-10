@@ -32,7 +32,7 @@
 
 @layer components {
     .card {
-        @apply p-4 bg-deep-basalt/5 rounded-xl
+        @apply p-4 bg-deep-basalt/5 rounded-md
     }
 }
 

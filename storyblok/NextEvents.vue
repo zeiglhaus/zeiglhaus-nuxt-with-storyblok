@@ -46,7 +46,7 @@ v-for="event in nextThreeEvents"
                 class="grow shrink card p-3 flex basis-20 gap-x-4 bg-white hover:text-iron-basalt group border-1 border-weathered-basalt hover:shadow-md">
         <div>
           <h3
-              class="text-2xl p-1 py-0.5 border rounded-lg bg-volcanic-red/5 text-volcanic-red border-volcanic-red/30">
+              class="text-2xl p-1 py-0.5 border rounded-md bg-volcanic-red/5 text-volcanic-red border-volcanic-red/30">
             {{ event.short_date }}
           </h3>
         </div>

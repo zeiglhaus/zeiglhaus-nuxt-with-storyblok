@@ -30,7 +30,7 @@ const containerJustify = computed(() =>
       class="side-feature relative container mx-auto flex flex-col sm:flex-row gap-x-8 align-center my-4 sm:px-1/9"
       :class="[containerJustify]"
   >
-    <div class="md:w-1/2 sm:w-1/3 rounded-lg overflow-hidden" :class="[imageOrder]">
+    <div class="md:w-1/2 sm:w-1/3 rounded-md overflow-hidden" :class="[imageOrder]">
       <NuxtImg
           :src="blok.image.filename"
           :alt="blok.image.alt"
