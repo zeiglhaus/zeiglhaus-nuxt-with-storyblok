@@ -51,7 +51,7 @@ const heroClasses = computed(() => {
       <div class="absolute z-1 -top-20 bottom-0 right-0 left-0 z-0 object-cover bg-white bg-fade-to-top"/>
     </div>
     <NuxtImg
-        class="absolute top-0 left-0 z-0 w-full h-full object-cover"
+        class="absolute top-0 left-0 z-0 w-full h-full object-cover parallax-image"
         :src="blok.background_image.filename"
         :alt="blok.background_image.alt"
         width="1920"
@@ -66,6 +66,24 @@ const heroClasses = computed(() => {
 </template>
 
 <style scoped>
+/* CSS scroll-driven parallax animation - runs on compositor thread */
+@supports (animation-timeline: scroll()) {
+  .parallax-image {
+    animation: parallax linear;
+    animation-timeline: scroll(root);
+    animation-range: 0vh 100vh;
+  }
+  
+  @keyframes parallax {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(50vh);
+    }
+  }
+}
+
 @keyframes swing {
 /*  0% { transform: rotate(0deg); }
   25% { transform: rotate(2deg); }
