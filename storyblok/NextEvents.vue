@@ -43,7 +43,7 @@ const nextThreeEvents = computed(() => {
       <Icon name="mdi:calendar" />
       {{ blok.title }}
     </h2>
-<div class="grid grid-cols-2 lg:flex gap-x-4 gap-y-6 flex-wrap">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex gap-x-4 gap-y-6 flex-wrap">
       <NuxtLink
 v-for="event in nextThreeEvents"
                 :key="event._uid"
