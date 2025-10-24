@@ -42,7 +42,7 @@ class="mt-2 max-w-full
       </div>
       <div class="flex flex-col justify-stretch md:place-items-center mt-8">
         <a
-href="#" class="block text-center signup-wiggle px-6 py-3 rounded-md font-handwritten text-2xl bg-molten-amber
+href="#" class="block text-center px-6 py-3 rounded-md font-handwritten text-2xl bg-molten-amber
        hover:bg-volcanic-red hover:shadow-[0_0_15px] hover:shadow-basalt-highlight transition-all transition-300">
           {{ blok.sign_up_button }}
         </a>
@@ -50,7 +50,7 @@ href="#" class="block text-center signup-wiggle px-6 py-3 rounded-md font-handwr
     </div>
   </div>
   <NuxtImg
-      class="z-0 absolute top-0 left-0 z-0 w-full h-full object-cover"
+      class="z-0 absolute top-0 left-0 w-full h-full object-cover"
       :src="blok.background_image.filename"
       :alt="blok.background_image.alt"
       width="1200"
@@ -62,25 +62,5 @@ href="#" class="block text-center signup-wiggle px-6 py-3 rounded-md font-handwr
 <style>
 .prose li > p {
   margin: 0;
-}
-
-.signup-wiggle:hover {
-  animation: wiggle-bounce-hover 0.7s ease-in-out;
-}
-
-@keyframes wiggle-bounce-hover {
-  0% { transform: rotate(0deg) scale(1.05); }
-  15% { transform: rotate(-3deg) scale(1.07); }
-  30% { transform: rotate(3deg) scale(1.10); }
-  45% { transform: rotate(-2deg) scale(1.08); }
-  60% { transform: rotate(2deg) scale(1.09); }
-  75% { transform: rotate(-1deg) scale(1.07); }
-  100% { transform: rotate(0deg) scale(1.05); }
-}
-
-@media (prefers-reduced-motion) {
-  .signup-wiggle:hover {
-    animation: none;
-  }
 }
 </style>
