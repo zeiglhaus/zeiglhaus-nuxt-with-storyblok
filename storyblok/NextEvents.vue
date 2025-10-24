@@ -39,7 +39,7 @@ const nextThreeEvents = computed(() => {
 
 <template>
   <div v-editable="blok" class="container mx-auto my-12 card">
-    <h2 class="text-zh-green mb-4 flex items-center gap-2">
+    <h2 class="text-zh-green font-medium mb-4 flex items-center gap-2">
       <Icon name="mdi:calendar" />
       {{ blok.title }}
     </h2>

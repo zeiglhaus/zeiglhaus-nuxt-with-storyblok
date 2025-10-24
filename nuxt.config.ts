@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       Caveat: true,
       'Antic Slab': true,
       'Fira Mono': {
-        wght: [400, 700]
+        wght: [400, 500, 700]
       }
     },
     display: 'swap',

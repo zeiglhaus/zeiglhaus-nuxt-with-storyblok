@@ -14,7 +14,7 @@
     }
 
     h1, h2, h3, h4 {
-        @apply font-antic-slab;
+        @apply font-fira-mono tracking-tight;
     }
 
     h1 {
@@ -22,7 +22,7 @@
     }
 
     h2 {
-        @apply text-3xl;
+        @apply text-3xl font-medium;
     }
 
     h3 {
