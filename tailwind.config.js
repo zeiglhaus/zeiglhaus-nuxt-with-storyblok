@@ -26,7 +26,7 @@ module.exports = {
                 'zh-green': '#7B9F6E'
             },
             fontFamily: {
-                'sans': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                'sans': ['Fira Sans', ...defaultTheme.fontFamily.sans],
                 'handwritten': ['Caveat', 'cursive'],
                 'antic-slab': ['Antic Slab', ...defaultTheme.fontFamily.serif],
                 'fira-mono': ['Fira Mono', ...defaultTheme.fontFamily.sans]                

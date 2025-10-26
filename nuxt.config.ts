@@ -35,16 +35,14 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Montserrat: {
-        // Common weights for body text:
-        wght: [300, 400, 500, 600, 700],
-        ital: [100]
-      },
       Caveat: true,
-      'Antic Slab': true,
       'Fira Mono': {
         wght: [400, 500, 700]
-      }
+      },
+      'Fira Sans': {
+        wght: [400, 500, 600],
+        ital: [100]
+      },
     },
     display: 'swap',
     download: true,
