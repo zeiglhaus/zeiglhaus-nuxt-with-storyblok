@@ -24,7 +24,7 @@ const heroClasses = computed(() => {
       :class="heroClasses"
   >
     <div class="container mx-auto z-[11] flex justify-end">
-        <div class="relative animate-swing max-w-screen h-0">
+        <div class="relative animate-swing max-w-screen h-0 hidden md:block">
           <div class="absolute top-0 left-1/2 transform -translate-x-1/2 h-32">
             <div class="flex space-x-16">
               <div class="w-0.5 h-32 bg-gray-600"/>
@@ -36,6 +36,9 @@ const heroClasses = computed(() => {
             <OpenSign>Betrieb jeden Donnerstag ab 18 Uhr geöffnet!</OpenSign>
           </div>
         </div>
+    </div>
+    <div class="absolute pl-8 pr-8 md:top-1 top-20 z-10 w-full">
+      <img src="assets/images/Zeiglhaus-kein-Stern.svg" class="w-2xl" >
     </div>
     <div
         class="relative px-8 pt-20 z-10 w-full py-6"
