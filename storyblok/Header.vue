@@ -34,7 +34,7 @@ const closeMobileMenu = () => {
       >
         <div class="flex justify-between items-center gap-3">
           <NuxtLink to="/" class="flex gap-2 place-items-center">
-            <img src="assets/images/Zeiglhaus_Stern.svg" class="w-8">
+            <img src="assets/images/Zeiglhaus_Stern.svg" class="w-8 hover:opacity-70 transition-opacity duration-200">
             <h1 class="block md:hidden sm:text-4xl text-xl font-medium tracking-tighter">Zeiglhaus Parkstein</h1>
           </NuxtLink>
 
