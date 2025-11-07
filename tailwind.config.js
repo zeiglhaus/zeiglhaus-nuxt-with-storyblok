@@ -23,7 +23,7 @@ module.exports = {
                 'beer-foam': '#F8F4E3',
 
                 // CI colors
-                'zh-green': '#7B9F6E'
+                'zh-green': '#4d8339' // '#7B9F6E'
             },
             fontFamily: {
                 'sans': ['Fira Sans', ...defaultTheme.fontFamily.sans],
