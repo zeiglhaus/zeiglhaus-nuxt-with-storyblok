@@ -14,7 +14,7 @@ const { blok } = defineProps({
       <div class="rounded-full bg-deep-basalt w-2 h-2 -translate-x-1/2 mt-3.5"/>
     </div>
     <div class="timeline-text-column sm:w-1/2 sm:min-w-1/2 sm:max-w-1/2 mb-10">
-      <h2 class="mb-2 text-volcanic-red">{{ blok.year }}</h2>
+      <h2 class="mb-2 text-zh-green">{{ blok.year }}</h2>
       <span class="text-deep-basalt">{{ blok.text }}</span>
     </div>
   </div>
