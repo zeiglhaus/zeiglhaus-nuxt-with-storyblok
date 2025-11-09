@@ -1,10 +1,11 @@
 <script setup>
 const storyblokApi = useStoryblokApi();
+const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production'
 
 const footerMenu = ref(null);
 
 const { data } = await storyblokApi.get('cdn/stories/config', {
-  version: 'draft',
+  version: isPreview ? 'draft' : 'published',
   resolve_links: 'url'
 })
 

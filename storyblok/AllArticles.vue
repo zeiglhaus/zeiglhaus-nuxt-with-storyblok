@@ -5,13 +5,14 @@ defineProps({
     default: () => ({}) 
   } 
 })
+const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production'
 
 const storyblokApi = useStoryblokApi()
 
 const articles = ref(null)
 
 const { data } = await storyblokApi.get('cdn/stories', {
-  version: 'draft',
+  version: isPreview ? 'draft' : 'published',
   starts_with: 'blog',
   is_startpage: false,
 })
