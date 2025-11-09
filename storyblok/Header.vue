@@ -1,12 +1,13 @@
 <script setup>
 const storyblokApi = useStoryblokApi();
+const isPreview = useRuntimeConfig().public.NODE_ENV !== 'production'
 
 const headerMenu = ref(null);
 const headerMenuIcons = ref(null);
 const isMobileMenuOpen = ref(false);
 
 const { data } = await storyblokApi.get('cdn/stories/config', {
-  version: 'draft',
+  version: isPreview ? 'draft' : 'published',
   resolve_links: 'url'
 })
 
@@ -34,14 +35,16 @@ const closeMobileMenu = () => {
       >
         <div class="flex justify-between items-center gap-3">
           <NuxtLink to="/" class="flex gap-2 place-items-center">
-            <img src="assets/images/Zeiglhaus_Stern.svg" class="w-8 hover:opacity-70 transition-opacity duration-200">
+            <img src="assets/images/Zeiglhaus_Stern.svg" class="w-8 hover:opacity-70 hover:scale-105 transition-all duration-200">
             <h1 class="block md:hidden sm:text-4xl text-xl font-medium tracking-tighter">Zeiglhaus Parkstein</h1>
           </NuxtLink>
 
           <nav class="hidden md:flex text-weathered-basalt flex-col justify-center">
             <ul class="flex gap-x-4 text-lg">
               <li v-for="blok in headerMenu" :key="blok._uid">
-                <NuxtLink :to="`/${blok.link.story.url}`" class="hover:text-molten-amber">
+                <NuxtLink
+:to="`/${blok.link.story.url}`" 
+                  class="hover:text-molten-amber transition-all duration-300 ease-out hover:scale-105">
                   {{ blok.link.story.name }}
                 </NuxtLink>
               </li>
@@ -50,10 +53,10 @@ const closeMobileMenu = () => {
                   v-for="blok in headerMenuIcons"
                   :key="blok._uid"
                   :to="blok.link.url"
-                  class="hover:text-molten-amber flex items-center"
+                  class="hover:text-molten-amber flex items-center transition-all duration-300 ease-out hover:scale-110 hover:rotate-12 group"
                   target="_blank"
                 >
-                  <Icon :name="blok.icon" class="w-6 h-6" />
+                  <Icon :name="blok.icon" class="w-6 h-6 transition-transform duration-300 ease-out group-hover:scale-110" />
                 </NuxtLink>
               </li>
             </ul>
@@ -74,7 +77,7 @@ const closeMobileMenu = () => {
               <li v-for="blok in headerMenu" :key="blok._uid">
                 <NuxtLink
                     :to="`/${blok.link.story.url}`"
-                    class="block text-weathered-basalt hover:text-molten-amber text-lg py-2"
+                    class="block text-weathered-basalt hover:text-molten-amber text-lg py-2 transition-all duration-300 ease-out hover:translate-x-4 hover:scale-105 group"
                     @click="closeMobileMenu"
                 >
                   {{ blok.link.story.name }}
@@ -84,10 +87,11 @@ const closeMobileMenu = () => {
               <li v-for="blok in headerMenuIcons" :key="blok._uid">
                 <NuxtLink
                   :href="blok.link.url"
-                  class="flex items-center text-weathered-basalt hover:text-molten-amber text-lg py-2"
+                  class="flex items-center text-weathered-basalt hover:text-molten-amber text-lg py-2 transition-all duration-300 ease-out hover:translate-x-4 hover:scale-105 group"
                   @click="closeMobileMenu"
                 >
-                  <Icon :name="blok.icon" class="w-6 h-6 mr-1" /> {{ blok.title }}
+                  <Icon :name="blok.icon" class="w-6 h-6 mr-1 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:rotate-12" /> 
+                  <span class="transition-all duration-300 ease-out">{{ blok.title }}</span>
                 </NuxtLink>
               </li>
             </ul>
