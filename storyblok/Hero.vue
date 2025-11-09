@@ -38,7 +38,7 @@ const heroClasses = computed(() => {
         </div>
     </div>
     <div class="absolute pl-8 pr-8 md:top-1 top-20 z-10 w-full">
-      <img src="assets/images/Zeiglhaus-kein-Stern.svg" class="w-2xl" >
+      <img src="assets/images/Zeiglhaus-kein-Stern.svg" class="w-[30rem]" >
     </div>
     <div
         class="relative px-8 pt-20 z-10 w-full py-6"
