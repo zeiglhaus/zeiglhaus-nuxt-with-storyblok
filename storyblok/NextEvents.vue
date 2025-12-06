@@ -12,8 +12,6 @@ const story = await useAsyncStoryblok('termine', {
   version: isPreview ? 'draft' : 'published'
 }, {})
 
-console.log(story)
-
 const events = computed(() => story.value.content.body.find(blok => blok.component === 'event-grid')?.events)
 
 const nextThreeEvents = computed(() => {
@@ -47,7 +45,11 @@ const nextThreeEvents = computed(() => {
       <NuxtLink
 v-for="event in nextThreeEvents"
                 :key="event._uid"
-                :to="`/${story.full_slug}`"
+                :to="{
+                  path: `/${story.full_slug}`,
+                  hash: `#${event._uid}`
+                }"
+                :external="true"
                 class="grow shrink card p-3 flex basis-20 gap-x-4 bg-white hover:text-iron-basalt group border-1 border-weathered-basalt hover:shadow-md">
         <div>
           <h3
