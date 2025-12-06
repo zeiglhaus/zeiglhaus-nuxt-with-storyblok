@@ -42,10 +42,11 @@ class="mt-2 max-w-full
       </div>
       <div class="flex flex-col justify-stretch md:place-items-center mt-8">
         <a
-href="#" class="block text-center px-6 py-3 rounded-md font-handwritten text-2xl bg-molten-amber
+          href="/documents/Zeiglhaus_eV_Mitgliedsantrag-2023.pdf"
+          class="block text-center px-6 py-3 rounded-md font-handwritten text-2xl bg-molten-amber
        hover:bg-volcanic-red hover:shadow-[0_0_15px] hover:shadow-basalt-highlight transition-all transition-300">
           {{ blok.sign_up_button }}
-        </a>
+      </a>
       </div>
     </div>
   </div>
