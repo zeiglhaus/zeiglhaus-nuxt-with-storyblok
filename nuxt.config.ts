@@ -66,6 +66,8 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    menuPassword: process.env.MENU_PASSWORD || '',
+    storyblokManagementToken: process.env.STORYBLOK_MANAGEMENT_TOKEN || '',
     public: {
       NODE_ENV: process.env.NODE_ENV
     }
