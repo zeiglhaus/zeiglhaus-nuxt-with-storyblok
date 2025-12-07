@@ -72,7 +72,7 @@ export default defineEventHandler(async (event) => {
 
     return {
       success: true,
-      message: 'Menü erfolgreich aktualisiert und veröffentlicht',
+      message: 'Menü erfolgreich aktualisiert und veröffentlicht. Die Änderungen sind in 1-2 Minuten auf der Webseite sichtbar.',
       story: updateResponse.story
     }
   } catch (error: any) {
