@@ -52,6 +52,8 @@ Go to your Netlify site dashboard:
 3. Click **Save**
 4. **Redeploy your site** for the changes to take effect
 
+⚠️ **Important:** The `netlify.toml` configuration file is required for server API routes to work properly on Netlify. Make sure this file is committed and deployed.
+
 ---
 
 ## How to Use (For Volunteers)
@@ -93,21 +95,42 @@ Go to your Netlify site dashboard:
 
 ## Technical Details
 
+### Architecture
+
+This site uses **Static Site Generation (SSG)** with **Netlify Edge Functions**:
+
+- ✅ **SSG Mode:** All pages pre-built at deploy time and served from CDN
+- ✅ **Edge Functions:** Only 2 API endpoints run serverless code (at the edge)
+- ✅ **Auto-rebuild:** Storyblok webhooks trigger Netlify rebuilds on content changes
+- ✅ **Performance:** Minimal function invocations, bot traffic hits CDN (no functions)
+- ✅ **Cost-effective:** 1M free edge function calls/month
+
 ### Files Created
 
 ```
-composables/useAuth.ts                    # Authentication composable
-server/api/auth/validate.post.ts          # Password validation endpoint
-server/api/update-menu.post.ts            # Storyblok update endpoint
-pages/edit-menu.vue                       # Main edit interface
+composables/useAuth.ts                         # Authentication composable
+pages/edit-menu.vue                            # Main edit interface
+netlify/edge-functions/auth-validate.ts        # Password validation (Edge Function)
+netlify/edge-functions/update-menu.ts          # Storyblok update (Edge Function)
+netlify.toml                                   # Netlify deployment configuration
+server/api/auth/validate.post.ts               # Local dev: Password validation
+server/api/update-menu.post.ts                 # Local dev: Storyblok update
 ```
 
 ### Files Modified
 
 ```
-nuxt.config.ts                            # Added runtime config
-.env                                       # Environment variables
+nuxt.config.ts                                 # Disabled SSR, enabled SSG
+.env                                           # Environment variables
 ```
+
+### Deployment Flow
+
+1. Volunteer edits menu via `/edit-menu` page
+2. Edge Function updates Storyblok content
+3. Storyblok webhook triggers Netlify rebuild
+4. Site regenerated with new static pages
+5. Changes live on CDN within 1-2 minutes
 
 ### Storyblok Story Details
 

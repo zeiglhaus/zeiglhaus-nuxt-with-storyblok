@@ -1,13 +1,8 @@
-[build]
-  command = "pnpm generate"  # Changed from "pnpm build"
+# Edge Functions for API endpoints
+[[edge_functions]]
+  function = "auth-validate"
+  path = "/api/auth/validate"
 
-# Only route API endpoints to serverless functions
-[[redirects]]
-  from = "/api/auth/validate"
-  to = "/.netlify/functions/server"
-  status = 200
-
-[[redirects]]
-  from = "/api/update-menu"
-  to = "/.netlify/functions/server"
-  status = 200
+[[edge_functions]]
+  function = "update-menu"
+  path = "/api/update-menu"
