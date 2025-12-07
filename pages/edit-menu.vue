@@ -358,6 +358,13 @@ useHead({
                 <div v-else class="text-gray-500">
                   Kein Menütext eingegeben
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 text-xs text-gray-500">
+            Die Vorschau aktualisiert sich automatisch beim Tippen
+          </div>
         </div>
       </div>
     </div>
