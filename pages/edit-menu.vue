@@ -349,15 +349,15 @@ useHead({
             <!-- Preview Menu Text -->
             <div>
               <h3 class="text-sm font-medium text-gray-500 mb-2">Menü:</h3>
-              <div class="text-gray-900 whitespace-pre-line leading-relaxed">
-                {{ menuText || 'Kein Menütext eingegeben' }}
-              </div>
-            </div>
-          </div>
-
-          <div class="mt-4 text-xs text-gray-500">
-            Die Vorschau aktualisiert sich automatisch beim Tippen
-          </div>
+              <div class="text-gray-900 leading-relaxed">
+                <ul v-if="menuText.trim()" class="list-disc list-inside space-y-1">
+                  <li v-for="(line, index) in menuText.split('\n').filter(line => line.trim())" :key="index">
+                    {{ line.trim() }}
+                  </li>
+                </ul>
+                <div v-else class="text-gray-500">
+                  Kein Menütext eingegeben
+                </div>
         </div>
       </div>
     </div>
