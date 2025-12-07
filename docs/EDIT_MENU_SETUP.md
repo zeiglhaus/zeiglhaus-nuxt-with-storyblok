@@ -111,13 +111,14 @@ nuxt.config.ts                            # Added runtime config
 
 ### Storyblok Story Details
 
-- **Story ID:** 120487464890834
-- **Slug:** menu-config
+- **Story ID:** 69315002926347
+- **Slug:** speisekarte
 - **Space ID:** 336393
-- **Component:** menu-config
-- **Fields:**
+- **Page Structure:** Page with multiple components in `body` array
+- **Target Component:** MenuContentBox (found within the body array)
+- **MenuContentBox Fields:**
   - `date` (string): Format "YYYY-MM-DD HH:MM"
-  - `menu_text` (string): Multi-line text
+  - `menu_items` (string): Multi-line text with menu items
 
 ---
 
@@ -145,7 +146,8 @@ nuxt.config.ts                            # Added runtime config
 ### Changes don't save
 - ✅ Check the browser console for error messages
 - ✅ Verify the Storyblok token has write permissions
-- ✅ Ensure the story ID (120487464890834) is correct
+- ✅ Ensure the story ID (69315002926347) is correct
+- ✅ Verify the MenuContentBox component exists in the story's body array
 
 ### Preview doesn't update
 - ✅ This is a client-side feature and should work immediately

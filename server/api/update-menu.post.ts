@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
   const { menu_text, date } = body
   const managementToken = config.storyblokManagementToken
   const spaceId = '336393'
-  const storyId = '120487464890834'
+  const storyId = '69315002926347'
 
   if (!managementToken) {
     throw createError({
@@ -48,14 +48,23 @@ export default defineEventHandler(async (event) => {
       }
     })
 
-    // 2. Update content fields
-    const updatedContent = {
-      ...currentStory.story.content,
-      date,
-      menu_text
+    // 2. Find the MenuContentBox component in the body array
+    const menuBox = currentStory.story.content.body.find(
+      (block: any) => block.component === 'MenuContentBox'
+    )
+
+    if (!menuBox) {
+      throw createError({
+        statusCode: 500,
+        message: 'MenuContentBox component not found in story'
+      })
     }
 
-    // 3. Update and publish story in one call
+    // 3. Update the MenuContentBox fields
+    menuBox.date = date
+    menuBox.menu_items = menu_text
+
+    // 4. Update and publish story in one call
     const updateResponse = await $fetch<{ story: any }>(apiBase, {
       method: 'PUT',
       headers: {
@@ -64,7 +73,7 @@ export default defineEventHandler(async (event) => {
       },
       body: {
         story: {
-          content: updatedContent
+          content: currentStory.story.content
         },
         publish: 1
       }

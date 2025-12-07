@@ -79,26 +79,36 @@ const fetchCurrentMenu = async () => {
   
   try {
     const storyblokApi = useStoryblokApi()
-    const { data } = await storyblokApi.get('cdn/stories/menu-config', {
+    const { data } = await storyblokApi.get('cdn/stories/speisekarte', {
       version: 'published'
     })
     
     if (data.story && data.story.content) {
-      menuText.value = data.story.content.menu_text || ''
-      const dateValue = data.story.content.date || ''
-      menuDate.value = convertToDateInput(dateValue)
+      // Find MenuContentBox in the body array
+      const menuBox = data.story.content.body?.find(
+        (block: any) => block.component === 'MenuContentBox'
+      )
       
-      // Store originals
-      originalMenuText.value = menuText.value
-      originalMenuDate.value = dateValue
-      
-      statusMessage.value = 'Aktuelles Menü geladen'
-      statusType.value = 'success'
-      
-      setTimeout(() => {
-        statusMessage.value = ''
-        statusType.value = ''
-      }, 3000)
+      if (menuBox) {
+        menuText.value = menuBox.menu_items || ''
+        const dateValue = menuBox.date || ''
+        menuDate.value = convertToDateInput(dateValue)
+        
+        // Store originals
+        originalMenuText.value = menuText.value
+        originalMenuDate.value = dateValue
+        
+        statusMessage.value = 'Aktuelles Menü geladen'
+        statusType.value = 'success'
+        
+        setTimeout(() => {
+          statusMessage.value = ''
+          statusType.value = ''
+        }, 3000)
+      } else {
+        statusMessage.value = 'MenuContentBox nicht gefunden'
+        statusType.value = 'error'
+      }
     }
   } catch (err) {
     statusMessage.value = 'Fehler beim Laden des Menüs'
