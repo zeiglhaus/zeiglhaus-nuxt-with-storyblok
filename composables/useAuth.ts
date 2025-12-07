@@ -1,7 +1,9 @@
 export const useAuth = () => {
+  const nuxtApp = useNuxtApp()
+  
   const isAuthenticated = useState<boolean>('auth-status', () => {
     // Check sessionStorage on initialization
-    if (process.client) {
+    if (nuxtApp.isClient) {
       return sessionStorage.getItem('menu-auth') === 'true'
     }
     return false
@@ -9,7 +11,7 @@ export const useAuth = () => {
 
   const storedPassword = useState<string>('auth-password', () => {
     // Retrieve password from sessionStorage on initialization
-    if (process.client) {
+    if (nuxtApp.isClient) {
       return sessionStorage.getItem('menu-password') || ''
     }
     return ''
@@ -31,7 +33,7 @@ export const useAuth = () => {
       if (response.success) {
         isAuthenticated.value = true
         storedPassword.value = password
-        if (process.client) {
+        if (nuxtApp.isClient) {
           sessionStorage.setItem('menu-auth', 'true')
           sessionStorage.setItem('menu-password', password)
         }
@@ -51,7 +53,7 @@ export const useAuth = () => {
   const logout = () => {
     isAuthenticated.value = false
     storedPassword.value = ''
-    if (process.client) {
+    if (nuxtApp.isClient) {
       sessionStorage.removeItem('menu-auth')
       sessionStorage.removeItem('menu-password')
     }
