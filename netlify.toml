@@ -1,6 +1,5 @@
 [build]
   command = "pnpm generate"  # Changed from "pnpm build"
-  publish = ".output/public"
 
 # Only route API endpoints to serverless functions
 [[redirects]]
@@ -12,6 +11,3 @@
   from = "/api/update-menu"
   to = "/.netlify/functions/server"
   status = 200
-  
-[functions]
-  directory = ".output/server"
