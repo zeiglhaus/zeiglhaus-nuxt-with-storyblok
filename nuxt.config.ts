@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   ssr: process.env.NUXT_PUBLIC_NODE_ENV === 'production',
   devtools: { enabled: true },
   nitro: {
-    preset: 'netlify_edge'
+    preset: 'netlify'
   },
   app: {
     head: {
