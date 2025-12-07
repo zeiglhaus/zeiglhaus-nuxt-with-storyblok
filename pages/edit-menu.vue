@@ -35,24 +35,24 @@ const formatGermanDate = (dateString: string): string => {
   }
 }
 
-// Convert date for datetime-local input
-const convertToDatetimeLocal = (dateString: string): string => {
+// Convert date for date input
+const convertToDateInput = (dateString: string): string => {
   if (!dateString) return ''
   
   try {
-    const [datePart, timePart] = dateString.split(' ')
-    return `${datePart}T${timePart || '00:00'}`
+    const [datePart] = dateString.split(' ')
+    return datePart
   } catch {
     return ''
   }
 }
 
-// Convert from datetime-local to Storyblok format
-const convertFromDatetimeLocal = (dateString: string): string => {
+// Convert from date input to Storyblok format
+const convertFromDateInput = (dateString: string): string => {
   if (!dateString) return ''
   
   try {
-    return dateString.replace('T', ' ')
+    return `${dateString} 00:00`
   } catch {
     return dateString
   }
@@ -61,7 +61,7 @@ const convertFromDatetimeLocal = (dateString: string): string => {
 // Computed formatted date for preview
 const formattedDate = computed(() => {
   if (!menuDate.value) return ''
-  const storyblokFormat = convertFromDatetimeLocal(menuDate.value)
+  const storyblokFormat = convertFromDateInput(menuDate.value)
   return formatGermanDate(storyblokFormat)
 })
 
@@ -69,7 +69,7 @@ const formattedDate = computed(() => {
 watch([menuText, menuDate], () => {
   hasUnsavedChanges.value = 
     menuText.value !== originalMenuText.value || 
-    convertFromDatetimeLocal(menuDate.value) !== originalMenuDate.value
+    convertFromDateInput(menuDate.value) !== originalMenuDate.value
 })
 
 // Fetch current menu data
@@ -86,7 +86,7 @@ const fetchCurrentMenu = async () => {
     if (data.story && data.story.content) {
       menuText.value = data.story.content.menu_text || ''
       const dateValue = data.story.content.date || ''
-      menuDate.value = convertToDatetimeLocal(dateValue)
+      menuDate.value = convertToDateInput(dateValue)
       
       // Store originals
       originalMenuText.value = menuText.value
@@ -138,7 +138,7 @@ const handleSave = async () => {
       body: {
         password: storedPassword.value,
         menu_text: menuText.value,
-        date: convertFromDatetimeLocal(menuDate.value)
+        date: convertFromDateInput(menuDate.value)
       }
     })
     
@@ -149,7 +149,7 @@ const handleSave = async () => {
       
       // Update originals
       originalMenuText.value = menuText.value
-      originalMenuDate.value = convertFromDatetimeLocal(menuDate.value)
+      originalMenuDate.value = convertFromDateInput(menuDate.value)
     }
   } catch (err: any) {
     statusMessage.value = err.data?.message || 'Fehler beim Speichern'
@@ -166,7 +166,7 @@ const handleReset = () => {
   }
   
   menuText.value = originalMenuText.value
-  menuDate.value = convertToDatetimeLocal(originalMenuDate.value)
+  menuDate.value = convertToDateInput(originalMenuDate.value)
   statusMessage.value = 'Änderungen zurückgesetzt'
   statusType.value = 'success'
   
@@ -283,13 +283,10 @@ useHead({
               <input
                 id="date"
                 v-model="menuDate"
-                type="datetime-local"
+                type="date"
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 required
               />
-              <p class="text-xs text-gray-500 mt-1">
-                Format: "2025-12-09 00:00"
-              </p>
             </div>
 
             <!-- Menu Text -->
@@ -306,7 +303,7 @@ useHead({
                 required
               ></textarea>
               <p class="text-xs text-gray-500 mt-1">
-                Jede Zeile wird als separate Zeile angezeigt
+                Jede Zeile wird als separater Punkt angezeigt
               </p>
             </div>
 
@@ -331,7 +328,7 @@ useHead({
             </div>
 
             <div v-if="hasUnsavedChanges" class="text-sm text-orange-600">
-              ⚠️ Sie haben ungespeicherte Änderungen
+              ⚠️ Du hast ungespeicherte Änderungen
             </div>
           </form>
         </div>
